@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- http://getbootstrap.com/docs/4.5/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">  
+    <link href="style.css" rel="stylesheet">
+      <!-- http://getbootstrap.com/docs/4.5/ -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <title>Formulação Dieta</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Formulação de Dieta</h1>
+    <div id="quantidades"> 
+        <div><label style="padding-left: 20px; margin-right: 19px;" id="1">Peso Médio (Kg)</label><input id="peso" style="width:80px"; type="number"></div>
+        <div><label style="padding-left: 20px; margin-right: 20px;" id="2">Forragem (Tipo)</label><input id="forragens" style="width:150px"; list="forragem">
+            <datalist id="forragem">
+                <option value="Braquiarão">
+                <option value="MG 12 Paredão">
+                <option value="BRS Capiaçu">
+                <option value="Silagem">
+              </datalist></div>
+        <div><label style="padding-left: 20px; margin-right: 103px;" id="3">Mês </label><input id="mes" style="width:150px"; list="meses"></div>
+        <datalist id="meses">
+            <option value="Janeiro">
+            <option value="Fevereiro">
+            <option value="Março">
+            <option value="Abril">
+            <option value="Maio">
+            <option value="Junho">
+            <option value="Julho">
+            <option value="Agosto">
+            <option value="Setembro">
+            <option value="Outubro">
+            <option value="Novembro">
+            <option value="Dezembro">
+          </datalist></div>
+        <button id="ok" style="margin:0 0 20px 20px;" class="btn btn-outline-success" onclick="DefinirMatriz();">Calcular</button>    
+        <ul id="ul_3" style="margin-top: 15px;">
+            <li><a href="Calendario_manejo_adaptado.pdf">Manejo Sanitário</a></li>
+            <li style="margin-top: 8px;"><a href="#">Adubação</a></li>
+            <li style="margin-top: 8px;"><a href="altura.html">Altura de Capim</a></li>
+            <li style="margin-top: 8px;"><a href="#">Controle Cigarrinha</a></li>
+            <li style="margin-top: 8px;"><a href="#">Cálculo Matéria Seca</a></li>
+            <li style="margin-top: 8px;"><a href="#">Venenos Para Pasto</a></li>
+            <li style="margin-top: 8px;"><a href="#">Cerca Elétrica</a></li>
+        </ul> 
+    
+    </div>
+
+    <div style="padding: 9px;">
+        <div class="mb-3">
+            <ul id="ul_4" style="display: none;">
+                <li id="cap">BRS Capiaçu</li>
+                <li id="fuba">Fubá</li>
+                <li id="ureia">Uréia</li>
+                <li id="salm">Sal Mineral</li>
+                <li id="tiposal">Tipo Sal</li>
+                <li id="salb">Sal Branco</li>
+                <li id="gmd" style="margin-top: 10px; font-weight: bold;">GMD Esperado</li>
+            </ul>
+        </div>
+
+    </div>
+        
+    <table id="tabela11">
+        <tr id="111"><td id="1111">800</td><td id="1112">300</td><td id="1113">100</td><td id="1114">0</td><td id="1115">0</td><td id="1116">0</td><td id="1117">0</td><td id="1118">0</td><td id="1119">0</td></tr>
+        <tr id="112"><td id="1121">0</td><td id="1122">0</td><td id="1123">0</td><td id="1124">0</td><td id="1125">0</td><td id="1126">0</td><td id="1127">0</td><td id="1128">0</td><td id="1129">0</td></tr>
+        <tr id="113"><td id="1131">50</td><td id="1132">63</td><td id="1133">75</td><td id="1134">88</td><td id="1135">100</td><td id="1136">110</td><td id="1137">120</td><td id="1138">130</td><td id="1139">140</td></tr>
+        <tr id="114"><td id="1141">FOSBOVI 30</td><td id="1142">FOSBOVI 30</td><td id="1143">FOSBOVI 18</td><td id="1144">FOSBOVI 18</td><td id="1145">FOSBOVI 18</td><td id="1146">FOSBOVI 15</td><td id="1147">FOSBOVI 15</td><td id="1148">FOSBOVI 15</td><td id="1149">FOSBOVI 15</td></tr>    
+        <tr id="115"><td id="1151">25</td><td id="1152">26</td><td id="1153">0</td><td id="1154">0</td><td id="1155">0</td><td id="1156">0</td><td id="1157">0</td><td id="1158">0</td><td id="1159">0</td></tr>
+        <tr id="116"><td id="1161">740</td><td id="1162">680</td><td id="1163">720</td><td id="1164">780</td><td id="1165">870</td><td id="1166">930</td><td id="1167">920</td><td id="1168">910</td><td id="1169">850</td></tr>
+    </table>
+        
+    <table id="tabela12">
+        <tr id="121"><td id="1211">300</td><td id="1212">0</td><td id="1213">0</td><td id="1214">0</td><td id="1215">0</td><td id="1216">0</td><td id="1217">0</td><td id="1218">0</td><td id="1219">0</td></tr>
+        <tr id="122"><td id="1221">0</td><td id="1222">0</td><td id="1223">0</td><td id="1224">0</td><td id="1225">0</td><td id="1226">0</td><td id="1227">0</td><td id="1228">0</td><td id="1229">0</td></tr>
+        <tr id="123"><td id="1231">50</td><td id="1232">63</td><td id="1233">75</td><td id="1234">88</td><td id="1235">100</td><td id="1236">110</td><td id="1237">120</td><td id="1238">130</td><td id="1239">140</td></tr>
+        <tr id="124"><td id="1241">FOSBOVI 30</td><td id="1242">FOSBOVI 30</td><td id="1243">FOSBOVI 18</td><td id="1244">FOSBOVI 18</td><td id="1245">FOSBOVI 18</td><td id="1246">FOSBOVI 15</td><td id="1247">FOSBOVI 15</td><td id="1248">FOSBOVI 15</td><td id="1249">FOSBOVI 15</td></tr>    
+        <tr id="125"><td id="1251">25</td><td id="1252">26</td><td id="1253">0</td><td id="1254">0</td><td id="1255">0</td><td id="1256">0</td><td id="1257">0</td><td id="1258">0</td><td id="1259">0</td></tr>
+        <tr id="126"><td id="1261">500</td><td id="1262">500</td><td id="1263">600</td><td id="1264">690</td><td id="1265">760</td><td id="1266">850</td><td id="1267">850</td><td id="1268">850</td><td id="1269">760</td></tr>
+    </table>
+
+    <table id="tabela13">
+        <tr id="131"><td id="1311">200</td><td id="1312">300</td><td id="1313">0</td><td id="1314">0</td><td id="1315">0</td><td id="1316">0</td><td id="1317">0</td><td id="1318">0</td><td id="1319">0</td></tr>
+        <tr id="132"><td id="1321">45</td><td id="1322">57</td><td id="1323">61</td><td id="1324">77</td><td id="1325">85</td><td id="1326">85</td><td id="1327">85</td><td id="1328">85</td><td id="1329">85</td></tr>
+        <tr id="133"><td id="1331">50</td><td id="1332">63</td><td id="1333">75</td><td id="1334">88</td><td id="1335">100</td><td id="1336">110</td><td id="1337">120</td><td id="1338">130</td><td id="1339">140</td></tr>
+        <tr id="134"><td id="1341">FOSBOVI 30</td><td id="1342">FOSBOVI 30</td><td id="1343">FOSBOVI 18</td><td id="1344">FOSBOVI 18</td><td id="1345">FOSBOVI 18</td><td id="1346">FOSBOVI 18</td><td id="1347">FOSBOVI 15</td><td id="1348">FOSBOVI 15</td><td id="1349">FOSBOVI 15</td></tr>    
+        <tr id="135"><td id="1351">25</td><td id="1352">26</td><td id="1353">0</td><td id="1354">0</td><td id="1355">0</td><td id="1356">0</td><td id="1357">0</td><td id="1358">0</td><td id="1359">0</td></tr>
+        <tr id="136"><td id="1361">290</td><td id="1362">410</td><td id="1363">390</td><td id="1364">460</td><td id="1365">530</td><td id="1366">590</td><td id="1367">650</td><td id="1368">690</td><td id="1369">600</td></tr>
+    </table>
+
+    <table id="tabela14">
+        <tr id="141"><td id="1411">100</td><td id="1412">0</td><td id="1413">0</td><td id="1414">0</td><td id="1415">0</td><td id="1416">0</td><td id="1417">0</td><td id="1418">0</td><td id="1419">0</td></tr>
+        <tr id="142"><td id="1421">0</td><td id="1422">0</td><td id="1423">0</td><td id="1424">0</td><td id="1425">0</td><td id="1426">0</td><td id="1427">0</td><td id="1428">0</td><td id="1429">0</td></tr>
+        <tr id="143"><td id="1431">50</td><td id="1432">63</td><td id="1433">75</td><td id="1434">88</td><td id="1435">100</td><td id="1436">110</td><td id="1437">120</td><td id="1438">130</td><td id="1439">140</td></tr>
+        <tr id="144"><td id="1441">FOSBOVI 30</td><td id="1442">FOSBOVI 30</td><td id="1443">FOSBOVI 18</td><td id="1444">FOSBOVI 18</td><td id="1445">FOSBOVI 18</td><td id="1446">FOSBOVI 18</td><td id="1447">FOSBOVI 15</td><td id="1448">FOSBOVI 15</td><td id="1449">FOSBOVI 15</td></tr>    
+        <tr id="145"><td id="1451">25</td><td id="1452">26</td><td id="1453">0</td><td id="1454">0</td><td id="1455">0</td><td id="1456">0</td><td id="1457">0</td><td id="1458">0</td><td id="1459">0</td></tr>
+        <tr id="146"><td id="1461">400</td><td id="1462">460</td><td id="1463">560</td><td id="1464">650</td><td id="1465">730</td><td id="1466">800</td><td id="1467">850</td><td id="1468">850</td><td id="1469">800</td></tr>
+    </table>
+
+    <table id="tabela21">
+        <tr id="211"><td id="2111">900</td><td id="2112">200</td><td id="2113">0</td><td id="2114">0</td><td id="2115">0</td><td id="2116">0</td><td id="2117">0</td><td id="2118">0</td><td id="2119">0</td></tr>
+        <tr id="212"><td id="2121">0</td><td id="2122">0</td><td id="2123">0</td><td id="2124">0</td><td id="2125">0</td><td id="2126">0</td><td id="2127">0</td><td id="2128">0</td><td id="2129">0</td></tr>
+        <tr id="213"><td id="2131">50</td><td id="2132">63</td><td id="2133">75</td><td id="2134">88</td><td id="2135">100</td><td id="2136">110</td><td id="2137">120</td><td id="2138">130</td><td id="2139">140</td></tr>
+        <tr id="214"><td id="2141">FOSBOVI 15</td><td id="2142">FOSBOVI 15</td><td id="2143">FOSBOVI 15</td><td id="2144">FOSBOVI 15</td><td id="2145">FOSBOVI 15</td><td id="2146">FOSBOVI 15</td><td id="2147">FOSBOVI 15</td><td id="2148">FOSBOVI 15</td><td id="2149">FOSBOVI 15</td></tr>    
+        <tr id="215"><td id="2151">0</td><td id="2152">0</td><td id="2153">0</td><td id="2154">0</td><td id="2155">0</td><td id="2156">0</td><td id="2157">0</td><td id="2158">0</td><td id="2159">0</td></tr>
+        <tr id="216"><td id="2161">600</td><td id="2162">440</td><td id="2163">450</td><td id="2164">530</td><td id="2165">590</td><td id="2166">660</td><td id="2167">720</td><td id="2168">780</td><td id="2169">720</td></tr>
+    </table>
+
+    <table id="tabela22">
+        <tr id="221"><td id="2211">900</td><td id="2212">200</td><td id="2213">0</td><td id="2214">0</td><td id="2215">0</td><td id="2216">0</td><td id="2217">0</td><td id="2218">0</td><td id="2219">0</td></tr>
+        <tr id="222"><td id="2221">0</td><td id="2222">0</td><td id="2223">0</td><td id="2224">0</td><td id="2225">0</td><td id="2226">0</td><td id="2227">0</td><td id="2228">0</td><td id="2229">0</td></tr>
+        <tr id="223"><td id="2231">50</td><td id="2232">63</td><td id="2233">75</td><td id="2234">88</td><td id="2235">100</td><td id="2236">110</td><td id="2237">120</td><td id="2238">130</td><td id="2239">140</td></tr>
+        <tr id="224"><td id="2241">FOSBOVI 15</td><td id="2242">FOSBOVI 15</td><td id="2243">FOSBOVI 15</td><td id="2244">FOSBOVI 15</td><td id="2245">FOSBOVI 15</td><td id="2246">FOSBOVI 15</td><td id="2247">FOSBOVI 15</td><td id="2248">FOSBOVI 15</td><td id="2249">FOSBOVI 15</td></tr>    
+        <tr id="225"><td id="2251">0</td><td id="2252">0</td><td id="2253">0</td><td id="2254">0</td><td id="2255">0</td><td id="2256">0</td><td id="2257">0</td><td id="2258">0</td><td id="2259">0</td></tr>
+        <tr id="226"><td id="2261">600</td><td id="2262">440</td><td id="2263">450</td><td id="2264">530</td><td id="2265">590</td><td id="2266">660</td><td id="2267">720</td><td id="2268">780</td><td id="2269">720</td></tr>
+    </table>
+
+    <table id="tabela23">
+        <tr id="231"><td id="2311">900</td><td id="2312">200</td><td id="2313">0</td><td id="2314">0</td><td id="2315">0</td><td id="2316">0</td><td id="2317">0</td><td id="2318">0</td><td id="2319">0</td></tr>
+        <tr id="232"><td id="2321">0</td><td id="2322">0</td><td id="2323">0</td><td id="2324">0</td><td id="2325">0</td><td id="2326">0</td><td id="2327">0</td><td id="2328">0</td><td id="2329">0</td></tr>
+        <tr id="233"><td id="2331">50</td><td id="2332">63</td><td id="2333">75</td><td id="2334">88</td><td id="2335">100</td><td id="2336">110</td><td id="2337">120</td><td id="2338">130</td><td id="2339">140</td></tr>
+        <tr id="234"><td id="2341">FOSBOVI 15</td><td id="2342">FOSBOVI 15</td><td id="2343">FOSBOVI 15</td><td id="2344">FOSBOVI 15</td><td id="2345">FOSBOVI 15</td><td id="2346">FOSBOVI 15</td><td id="2347">FOSBOVI 15</td><td id="2348">FOSBOVI 15</td><td id="2349">FOSBOVI 15</td></tr>    
+        <tr id="235"><td id="2351">0</td><td id="2352">0</td><td id="2353">0</td><td id="2354">0</td><td id="2355">0</td><td id="2356">0</td><td id="2357">0</td><td id="2358">0</td><td id="2359">0</td></tr>
+        <tr id="236"><td id="2361">600</td><td id="2362">440</td><td id="2363">450</td><td id="2364">530</td><td id="2365">590</td><td id="2366">660</td><td id="2367">720</td><td id="2368">780</td><td id="2369">720</td></tr>
+    </table>
+
+
+    <table id="tabela24">
+        <tr id="241"><td id="2411">900</td><td id="2412">200</td><td id="2413">0</td><td id="2414">0</td><td id="2415">0</td><td id="2416">0</td><td id="2417">0</td><td id="2418">0</td><td id="2419">0</td></tr>
+        <tr id="242"><td id="2421">0</td><td id="2422">0</td><td id="2423">0</td><td id="2424">0</td><td id="2425">0</td><td id="2426">0</td><td id="2427">0</td><td id="2428">0</td><td id="2429">0</td></tr>
+        <tr id="243"><td id="2431">50</td><td id="2432">63</td><td id="2433">75</td><td id="2434">88</td><td id="2435">100</td><td id="2436">110</td><td id="2437">120</td><td id="2438">130</td><td id="2439">140</td></tr>
+        <tr id="244"><td id="2441">FOSBOVI 15</td><td id="2442">FOSBOVI 15</td><td id="2443">FOSBOVI 15</td><td id="2444">FOSBOVI 15</td><td id="2445">FOSBOVI 15</td><td id="2446">FOSBOVI 15</td><td id="2447">FOSBOVI 15</td><td id="2448">FOSBOVI 15</td><td id="2449">FOSBOVI 15</td></tr>    
+        <tr id="245"><td id="2451">0</td><td id="2452">0</td><td id="2453">0</td><td id="2454">0</td><td id="2455">0</td><td id="2456">0</td><td id="2457">0</td><td id="2458">0</td><td id="2459">0</td></tr>
+        <tr id="246"><td id="2461">600</td><td id="2462">440</td><td id="2463">450</td><td id="2464">530</td><td id="2465">590</td><td id="2466">660</td><td id="2467">720</td><td id="2468">780</td><td id="2469">720</td></tr>
+    </table>
+
+    <table id="tabela31">
+        <tr id="311"><td id="3111">13.9</td><td id="3112">17.3</td><td id="3113">20.8</td><td id="3114">24.3</td><td id="3115">28.0</td><td id="3116">31.5</td><td id="3117">35.0</td><td id="3118">38.5</td><td id="3119">42.0</td></tr>
+        <tr id="312"><td id="3121">200</td><td id="3122">260</td><td id="3123">350</td><td id="3124">250</td><td id="3125">0</td><td id="3126">0</td><td id="3127">0</td><td id="3128">0</td><td id="3129">0</td></tr>
+        <tr id="313"><td id="3131">60</td><td id="3132">75</td><td id="3133">90</td><td id="3134">105</td><td id="3135">110</td><td id="3136">110</td><td id="3137">110</td><td id="3138">110</td><td id="3139">110</td></tr>
+        <tr id="314"><td id="3141">30</td><td id="3142">60</td><td id="3143">70</td><td id="3144">80</td><td id="3145">90</td><td id="3146">100</td><td id="3147">110</td><td id="3148">120</td><td id="3149">130</td></tr>    
+        <tr id="315"><td id="3151">FOSBOVI 18</td><td id="3152">FOSBOVI 18</td><td id="3153">FOSBOVI 18</td><td id="3154">FOSBOVI 18</td><td id="3155">FOSBOVI 18</td><td id="3156">FOSBOVI 18</td><td id="3157">FOSBOVI 18</td><td id="3158">FOSBOVI 18</td><td id="3159">FOSBOVI 18</td></tr>
+        <tr id="316"><td id="3161">0</td><td id="3162">0</td><td id="3163">0</td><td id="3164">0</td><td id="3165">0</td><td id="3166">0</td><td id="3167">0</td><td id="3168">0</td><td id="3169">0</td></tr>
+        <tr id="317"><td id="3171">340</td><td id="3172">450</td><td id="3173">550</td><td id="3174">570</td><td id="3175">550</td><td id="3176">600</td><td id="3177">650</td><td id="3178">700</td><td id="3179">740</td></tr>   
+    </table>
+
+    <table id="tabela32">
+        <tr id="321"><td id="3211">13.9</td><td id="3212">17.3</td><td id="3213">20.8</td><td id="3214">24.3</td><td id="3215">28.0</td><td id="3216">31.5</td><td id="3217">35.0</td><td id="3218">38.5</td><td id="3219">42.0</td></tr>
+        <tr id="322"><td id="3221">200</td><td id="3222">260</td><td id="3223">350</td><td id="3224">250</td><td id="3225">0</td><td id="3226">0</td><td id="3227">0</td><td id="3228">0</td><td id="3229">0</td></tr>
+        <tr id="323"><td id="3231">60</td><td id="3232">75</td><td id="3233">90</td><td id="3234">105</td><td id="3235">110</td><td id="3236">110</td><td id="3237">110</td><td id="3238">110</td><td id="3239">110</td></tr>
+        <tr id="324"><td id="3241">30</td><td id="3242">60</td><td id="3243">70</td><td id="3244">80</td><td id="3245">90</td><td id="3246">100</td><td id="3247">110</td><td id="3248">120</td><td id="3249">130</td></tr>    
+        <tr id="325"><td id="3251">FOSBOVI 18</td><td id="3252">FOSBOVI 18</td><td id="3253">FOSBOVI 18</td><td id="3254">FOSBOVI 18</td><td id="3255">FOSBOVI 18</td><td id="3256">FOSBOVI 18</td><td id="3257">FOSBOVI 18</td><td id="3258">FOSBOVI 18</td><td id="3259">FOSBOVI 18</td></tr>
+        <tr id="326"><td id="3261">0</td><td id="3262">0</td><td id="3263">0</td><td id="3264">0</td><td id="3265">0</td><td id="3266">0</td><td id="3267">0</td><td id="3268">0</td><td id="3269">0</td></tr>
+        <tr id="327"><td id="3271">340</td><td id="3272">450</td><td id="3273">550</td><td id="3274">570</td><td id="3275">550</td><td id="3276">600</td><td id="3277">650</td><td id="3278">700</td><td id="3279">740</td></tr>   
+    </table>
+
+    <table id="tabela33">
+        <tr id="331"><td id="3311">13.9</td><td id="3312">17.3</td><td id="3313">20.8</td><td id="3314">24.3</td><td id="3315">28.0</td><td id="3316">31.5</td><td id="3317">35.0</td><td id="3318">38.5</td><td id="3319">42.0</td></tr>
+        <tr id="332"><td id="3321">200</td><td id="3322">260</td><td id="3323">350</td><td id="3324">250</td><td id="3325">0</td><td id="3326">0</td><td id="3327">0</td><td id="3328">0</td><td id="3329">0</td></tr>
+        <tr id="333"><td id="3331">60</td><td id="3332">75</td><td id="3333">90</td><td id="3334">105</td><td id="3335">110</td><td id="3336">110</td><td id="3337">110</td><td id="3338">110</td><td id="3339">110</td></tr>
+        <tr id="334"><td id="3341">30</td><td id="3342">60</td><td id="3343">70</td><td id="3344">80</td><td id="3345">90</td><td id="3346">100</td><td id="3347">110</td><td id="3348">120</td><td id="3349">130</td></tr>    
+        <tr id="335"><td id="3351">FOSBOVI 18</td><td id="3352">FOSBOVI 18</td><td id="3353">FOSBOVI 18</td><td id="3354">FOSBOVI 18</td><td id="3355">FOSBOVI 18</td><td id="3356">FOSBOVI 18</td><td id="3357">FOSBOVI 18</td><td id="3358">FOSBOVI 18</td><td id="3359">FOSBOVI 18</td></tr>
+        <tr id="336"><td id="3361">0</td><td id="3362">0</td><td id="3363">0</td><td id="3364">0</td><td id="3365">0</td><td id="3366">0</td><td id="3367">0</td><td id="3368">0</td><td id="3369">0</td></tr>
+        <tr id="337"><td id="3371">340</td><td id="3372">450</td><td id="3373">550</td><td id="3374">570</td><td id="3375">550</td><td id="3376">600</td><td id="3377">650</td><td id="3378">700</td><td id="3379">740</td></tr>   
+    </table>
+
+
+    <table id="tabela34">
+        <tr id="341"><td id="3411">13.9</td><td id="3412">17.3</td><td id="3413">20.8</td><td id="3414">24.3</td><td id="3415">28.0</td><td id="3416">31.5</td><td id="3417">35.0</td><td id="3418">38.5</td><td id="3419">42.0</td></tr>
+        <tr id="342"><td id="3421">200</td><td id="3422">260</td><td id="3423">350</td><td id="3424">250</td><td id="3425">0</td><td id="3426">0</td><td id="3427">0</td><td id="3428">0</td><td id="3429">0</td></tr>
+        <tr id="343"><td id="3431">60</td><td id="3432">75</td><td id="3433">90</td><td id="3434">105</td><td id="3435">110</td><td id="3436">110</td><td id="3437">110</td><td id="3438">110</td><td id="3439">110</td></tr>
+        <tr id="344"><td id="3441">30</td><td id="3442">60</td><td id="3443">70</td><td id="3444">80</td><td id="3445">90</td><td id="3446">100</td><td id="3447">110</td><td id="3448">120</td><td id="3449">130</td></tr>    
+        <tr id="345"><td id="3451">FOSBOVI 18</td><td id="3452">FOSBOVI 18</td><td id="3453">FOSBOVI 18</td><td id="3454">FOSBOVI 18</td><td id="3455">FOSBOVI 18</td><td id="3456">FOSBOVI 18</td><td id="3457">FOSBOVI 18</td><td id="3458">FOSBOVI 18</td><td id="3459">FOSBOVI 18</td></tr>
+        <tr id="346"><td id="3461">0</td><td id="3462">0</td><td id="3463">0</td><td id="3464">0</td><td id="3465">0</td><td id="3466">0</td><td id="3467">0</td><td id="3468">0</td><td id="3469">0</td></tr>
+        <tr id="347"><td id="3471">340</td><td id="3472">450</td><td id="3473">550</td><td id="3474">570</td><td id="3475">550</td><td id="3476">600</td><td id="3477">650</td><td id="3478">700</td><td id="3479">740</td></tr>   
+    </table>
+
+
+    <table id="tabela41">
+        <tr id="411"><td id="4111">18.1</td><td id="4112">23.3</td><td id="4113">28.1</td><td id="4114">32.9</td><td id="4115">37.5</td><td id="4116">42.1</td><td id="4117">46.7</td><td id="4118">51.3</td><td id="4119">55.9</td></tr>
+        <tr id="412"><td id="4121">600</td><td id="4122">400</td><td id="4123">300</td><td id="4124">0</td><td id="4125">0</td><td id="4126">0</td><td id="4127">0</td><td id="4128">0</td><td id="4129">0</td></tr>
+        <tr id="413"><td id="4131">30</td><td id="4132">25</td><td id="4133">25</td><td id="4134">10</td><td id="4135">10</td><td id="4136">10</td><td id="4137">10</td><td id="4138">10</td><td id="4139">10</td></tr>
+        <tr id="414"><td id="4141">60</td><td id="4142">75</td><td id="4143">90</td><td id="4144">100</td><td id="4145">110</td><td id="4146">120</td><td id="4147">130</td><td id="4148">140</td><td id="4149">150</td></tr>    
+        <tr id="415"><td id="4151">FOSBOVI 30</td><td id="4152">FOSBOVI 30</td><td id="4153">FOSBOVI 30</td><td id="4154">FOSBOVI 30</td><td id="4155">FOSBOVI 30</td><td id="4156">FOSBOVI 30</td><td id="4157">FOSBOVI 30</td><td id="4158">FOSBOVI 30</td><td id="4159">FOSBOVI 30</td></tr>
+        <tr id="416"><td id="4161">25</td><td id="4162">26</td><td id="4163">27</td><td id="4164">29</td><td id="4165">31</td><td id="4166">33</td><td id="4167">35</td><td id="4168">37</td><td id="4169">39</td></tr>
+        <tr id="417"><td id="4171">410</td><td id="4172">420</td><td id="4173">440</td><td id="4174">380</td><td id="4175">440</td><td id="4176">490</td><td id="4177">530</td><td id="4178">580</td><td id="4179">630</td></tr>   
+    </table>
+
+    <table id="tabela42">
+        <tr id="421"><td id="4211">18.1</td><td id="4212">23.3</td><td id="4213">28.1</td><td id="4214">32.9</td><td id="4215">37.5</td><td id="4216">42.1</td><td id="4217">46.7</td><td id="4218">51.3</td><td id="4219">55.9</td></tr>
+        <tr id="422"><td id="4221">600</td><td id="4222">400</td><td id="4223">300</td><td id="4224">0</td><td id="4225">0</td><td id="4226">0</td><td id="4227">0</td><td id="4228">0</td><td id="4229">0</td></tr>
+        <tr id="423"><td id="4231">30</td><td id="4232">25</td><td id="4233">25</td><td id="4234">10</td><td id="4235">10</td><td id="4236">10</td><td id="4237">10</td><td id="4238">10</td><td id="4239">10</td></tr>
+        <tr id="424"><td id="4241">60</td><td id="4242">75</td><td id="4243">90</td><td id="4244">100</td><td id="4245">110</td><td id="4246">120</td><td id="4247">130</td><td id="4248">140</td><td id="4249">150</td></tr>    
+        <tr id="425"><td id="4251">FOSBOVI 30</td><td id="4252">FOSBOVI 30</td><td id="4253">FOSBOVI 30</td><td id="4254">FOSBOVI 30</td><td id="4255">FOSBOVI 30</td><td id="4256">FOSBOVI 30</td><td id="4257">FOSBOVI 30</td><td id="4258">FOSBOVI 30</td><td id="4259">FOSBOVI 30</td></tr>
+        <tr id="426"><td id="4261">25</td><td id="4262">26</td><td id="4263">27</td><td id="4264">29</td><td id="4265">31</td><td id="4266">33</td><td id="4267">35</td><td id="4268">37</td><td id="4269">39</td></tr>
+        <tr id="427"><td id="4271">410</td><td id="4272">420</td><td id="4273">440</td><td id="4274">380</td><td id="4275">440</td><td id="4276">490</td><td id="4277">530</td><td id="4278">580</td><td id="4279">630</td></tr>   
+    </table>
+
+    <table id="tabela43">
+        <tr id="431"><td id="4311">18.1</td><td id="4312">23.3</td><td id="4313">28.1</td><td id="4314">32.9</td><td id="4315">37.5</td><td id="4316">42.1</td><td id="4317">46.7</td><td id="4318">51.3</td><td id="4319">55.9</td></tr>
+        <tr id="432"><td id="4321">600</td><td id="4322">400</td><td id="4323">300</td><td id="4324">0</td><td id="4325">0</td><td id="4326">0</td><td id="4327">0</td><td id="4328">0</td><td id="4329">0</td></tr>
+        <tr id="433"><td id="4331">30</td><td id="4332">25</td><td id="4333">25</td><td id="4334">10</td><td id="4335">10</td><td id="4336">10</td><td id="4337">10</td><td id="4338">10</td><td id="4339">10</td></tr>
+        <tr id="434"><td id="4341">60</td><td id="4342">75</td><td id="4343">90</td><td id="4344">100</td><td id="4345">110</td><td id="4346">120</td><td id="4347">130</td><td id="4348">140</td><td id="4349">150</td></tr>    
+        <tr id="435"><td id="4351">FOSBOVI 30</td><td id="4352">FOSBOVI 30</td><td id="4353">FOSBOVI 30</td><td id="4354">FOSBOVI 30</td><td id="4355">FOSBOVI 30</td><td id="4356">FOSBOVI 30</td><td id="4357">FOSBOVI 30</td><td id="4358">FOSBOVI 30</td><td id="4359">FOSBOVI 30</td></tr>
+        <tr id="436"><td id="4361">25</td><td id="4362">26</td><td id="4363">27</td><td id="4364">29</td><td id="4365">31</td><td id="4366">33</td><td id="4367">35</td><td id="4368">37</td><td id="4369">39</td></tr>
+        <tr id="437"><td id="4371">410</td><td id="4372">420</td><td id="4373">440</td><td id="4374">380</td><td id="4375">440</td><td id="4376">490</td><td id="4377">530</td><td id="4378">580</td><td id="4379">630</td></tr>   
+    </table>
+
+    <table id="tabela44">
+        <tr id="441"><td id="4411">18.1</td><td id="4412">23.3</td><td id="4413">28.1</td><td id="4414">32.9</td><td id="4415">37.5</td><td id="4416">42.1</td><td id="4417">46.7</td><td id="4418">51.3</td><td id="4419">55.9</td></tr>
+        <tr id="442"><td id="4421">600</td><td id="4422">400</td><td id="4423">300</td><td id="4424">0</td><td id="4425">0</td><td id="4426">0</td><td id="4427">0</td><td id="4428">0</td><td id="4429">0</td></tr>
+        <tr id="443"><td id="4431">30</td><td id="4432">25</td><td id="4433">25</td><td id="4434">10</td><td id="4435">10</td><td id="4436">10</td><td id="4437">10</td><td id="4438">10</td><td id="4439">10</td></tr>
+        <tr id="444"><td id="4441">60</td><td id="4442">75</td><td id="4443">90</td><td id="4444">100</td><td id="4445">110</td><td id="4446">120</td><td id="4447">130</td><td id="4448">140</td><td id="4449">150</td></tr>    
+        <tr id="445"><td id="4451">FOSBOVI 30</td><td id="4452">FOSBOVI 30</td><td id="4453">FOSBOVI 30</td><td id="4454">FOSBOVI 30</td><td id="4455">FOSBOVI 30</td><td id="4456">FOSBOVI 30</td><td id="4457">FOSBOVI 30</td><td id="4458">FOSBOVI 30</td><td id="4459">FOSBOVI 30</td></tr>
+        <tr id="446"><td id="4461">25</td><td id="4462">26</td><td id="4463">27</td><td id="4464">29</td><td id="4465">31</td><td id="4466">33</td><td id="4467">35</td><td id="4468">37</td><td id="4469">39</td></tr>
+        <tr id="447"><td id="3471">410</td><td id="4472">420</td><td id="4473">440</td><td id="4474">380</td><td id="4475">440</td><td id="4476">490</td><td id="4477">530</td><td id="4478">580</td><td id="4479">630</td></tr>   
+    </table4>
+
+    <footer class="small text-center text-muted">
+        <div>Ferradura de Prata</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
