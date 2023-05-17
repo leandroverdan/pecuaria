@@ -23,7 +23,6 @@ body {
   
   li {
     margin-bottom: 10px;
-      text-allign: justify !important;
   }
   
   li:before {
@@ -46,7 +45,3 @@ body {
     font-weight: bold !important;
     margin-top: 12px !important;
   }
-
-  p{
-      text-allign: justify !important;
-}
