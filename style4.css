@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----------Estilos Gerais---------*/
+html{
+    scroll-behavior: smooth;
+    background-image: url(imagens/cifrao.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 500px !important;
+    margin:10px auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 20px;
+}
+
+body{
+    background-color: rgba(255, 255, 255, 0.442) !important;
+}
+
+h1{
+    color: #034e16;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    padding-top:7px;
+    padding-bottom:2px;
+    font-weight: bold;
+}
+
+h2{
+    color: #034e16;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding:0 10px;
+    font-weight: 900;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+a,
+a:active,
+a:visited,
+a:link {
+    text-decoration: underline;
+    color:rgb(17, 92, 17);
+    font-weight: bolder;
+}
+
+a:hover{
+    color:white;
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+}
+
+table{
+    padding-left: 20px; 
+}
+
+td{
+    text-align: center !important;
+}
+
+input{
+    text-align: center !important;
+}
+
+ p{
+    margin: 1px !important;
+    padding-left: 10px;
+    text-align: justify;
+    padding-right: 10px;
+ }
+
+ h3{
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 7px !important;
+ }
+
+ img{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+ }
+
+ iframe{
+    display: block;
+    margin: 0 auto;
+ }

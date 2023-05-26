@@ -3,6 +3,16 @@ function DefinirMatriz(){
     var forr = document.getElementById("forragens").value;
     var mes = document.getElementById("mes").value;
 
+    if (peso =="" || forr=="" || mes==""){
+        alert("preencha todos os campos")
+    }else{
+    
+    if (peso<200){
+        peso=200
+    }
+    if (peso>600){
+        peso=600
+    }
     if (forr == "Braquiarão") {
         primeiro = 1
     }else if (forr == "MG 12 Paredão"){
@@ -30,7 +40,6 @@ function DefinirMatriz(){
     
     document.getElementById("quantidades").style.display="none"
     document.getElementById("ok").style.display="none"
-    document.getElementById("ul_3").style.display="none"
 
     if (primeiro ==1 || primeiro ==2 ){
         document.getElementById("ul_4").style.display="block"
@@ -88,5 +97,5 @@ function DefinirMatriz(){
         document.getElementById("salb").innerHTML+=" "+salb.textContent+" g"
         document.getElementById("gmd").innerHTML+=" "+gmd+" g"
     }
-
+    }
 }
