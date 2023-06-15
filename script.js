@@ -18,9 +18,9 @@ function DefinirMatriz(){
     }else if (forr == "MG 12 Paredão"){
         primeiro = 2
     }else if (forr == "BRS Capiaçu"){
-        primeiro = 3
-    }else if (forr == "Silagem"){
         primeiro = 4
+    }else if (forr == "Silagem"){
+        primeiro = 3
     }
 
     if (mes == "Dezembro" || mes == "Janeiro" || mes == "Fevereiro"){
